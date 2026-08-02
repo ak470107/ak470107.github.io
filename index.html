@@ -6,21 +6,25 @@
 <title>Ummema Atif</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #0F1420;
-    --bg-raised: #151B29;
-    --ink: #E8E6DE;
-    --ink-dim: #9BA3B4;
-    --line: #2A3244;
-    --gold: #C9A227;
-    --verified: #5B9788;
+    --bg: #F3E9DA;
+    --bg-raised: #EAE0CC;
+    --ink: #3A1F1B;
+    --ink-dim: #7A5C4E;
+    --line: #D8C4A8;
+    --maroon: #7A2333;
+    --verified: #6B5730;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  body{
+  body {
     background: var(--bg);
     color: var(--ink);
     font-family: 'IBM Plex Mono', monospace;
@@ -28,21 +32,41 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  ::selection{ background: var(--gold); color: var(--bg); }
+  ::selection {
+    background: var(--maroon);
+    color: var(--bg);
+  }
 
-  a{ color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease; }
-  a:hover{ border-bottom-color: var(--gold); }
-  a:focus-visible, button:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+  a {
+    color: var(--maroon);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease;
+  }
 
-  .wrap{ max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  a:hover {
+    border-bottom-color: var(--maroon);
+  }
 
-  /* ---------- header / contract stamp ---------- */
-  header{
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--maroon);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- header ---------- */
+  header {
     border-bottom: 1px solid var(--line);
     padding: 48px 0 32px;
   }
 
-  .doc-id{
+  .doc-id {
     font-size: 12px;
     letter-spacing: 0.08em;
     color: var(--ink-dim);
@@ -54,9 +78,12 @@
     gap: 8px 20px;
   }
 
-  .doc-id span b{ color: var(--verified); font-weight: 600; }
+  .doc-id span b {
+    color: var(--verified);
+    font-weight: 600;
+  }
 
-  h1{
+  h1 {
     font-family: 'Newsreader', serif;
     font-weight: 500;
     font-size: clamp(34px, 6vw, 52px);
@@ -65,45 +92,63 @@
     margin-bottom: 18px;
   }
 
-  .thesis{
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(18px, 2.6vw, 22px);
-    color: var(--ink-dim);
+  .thesis {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: clamp(24px, 3.4vw, 30px);
+    color: var(--maroon);
     max-width: 46ch;
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid var(--maroon);
     padding-left: 16px;
   }
 
-  /* ---------- section field labels ---------- */
-  section{ padding: 44px 0; border-bottom: 1px solid var(--line); }
-  section:last-of-type{ border-bottom: none; }
+  /* ---------- sections ---------- */
+  section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+  }
 
-  .field{
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  .field {
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--maroon);
     margin-bottom: 18px;
   }
 
-  .field::before{ content: "// "; color: var(--line); }
+  .field::before {
+    content: "// ";
+    color: var(--line);
+  }
 
-  p.body-text{ max-width: 62ch; color: var(--ink); font-size: 15.5px; }
-  p.body-text + p.body-text{ margin-top: 12px; }
+  p.body-text {
+    max-width: 62ch;
+    color: var(--ink);
+    font-size: 15.5px;
+  }
+
+  p.body-text + p.body-text {
+    margin-top: 12px;
+  }
 
   /* ---------- ledger rows (projects) ---------- */
-  .row{
+  .row {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 108px 1fr;
     gap: 4px 20px;
     padding: 22px 0;
     border-top: 1px dashed var(--line);
   }
-  .row:first-of-type{ border-top: none; }
 
-  .row .status{
+  .row:first-of-type {
+    border-top: none;
+  }
+
+  .row .status {
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -112,37 +157,75 @@
     padding-top: 3px;
   }
 
-  .row .status.wip{ color: var(--gold); }
+  .row .status.wip {
+    color: var(--maroon);
+  }
 
-  .row h3{
+  .row h3 {
     font-family: 'Newsreader', serif;
     font-weight: 600;
     font-size: 19px;
     margin-bottom: 6px;
   }
 
-  .row p{ color: var(--ink-dim); font-size: 14.5px; max-width: 56ch; }
+  .row p {
+    color: var(--ink-dim);
+    font-size: 14.5px;
+    max-width: 56ch;
+  }
 
-  .row .tags{ margin-top: 10px; font-size: 12px; color: var(--ink-dim); }
-  .row .tags span{ margin-right: 14px; }
-  .row .tags span::before{ content: "· "; color: var(--gold); }
+  .row .tags {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--ink-dim);
+  }
+
+  .row .tags span {
+    margin-right: 14px;
+  }
+
+  .row .tags span::before {
+    content: "\00b7 ";
+    color: var(--maroon);
+  }
 
   /* ---------- contact ---------- */
-  .contact-list{ display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
-  .contact-list a{ color: var(--ink); }
-  .contact-list a:hover{ color: var(--gold); }
-  .contact-list .k{ color: var(--ink-dim); display: inline-block; width: 84px; }
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+  }
 
-  footer{
+  .contact-list a {
+    color: var(--ink);
+  }
+
+  .contact-list a:hover {
+    color: var(--maroon);
+  }
+
+  .contact-list .k {
+    color: var(--ink-dim);
+    display: inline-block;
+    width: 84px;
+  }
+
+  footer {
     padding: 32px 0 48px;
     font-size: 12px;
     color: var(--ink-dim);
     letter-spacing: 0.04em;
   }
 
-  @media (max-width: 560px){
-    .row{ grid-template-columns: 1fr; }
-    .row .status{ padding-top: 0; }
+  @media (max-width: 560px) {
+    .row {
+      grid-template-columns: 1fr;
+    }
+
+    .row .status {
+      padding-top: 0;
+    }
   }
 </style>
 </head>
@@ -161,17 +244,17 @@
 
   <section>
     <div class="field">About</div>
-    <p class="body-text">FinTech student at FAST-NUCES Lahore (Batch 28), currently interning at FlyRank AI across two tracks — Machine Learning and AI Fluency. My work sits at the intersection of data, models, and regulation: I like problems where "make it better" has to turn into a metric someone can actually check.</p>
-    <p class="body-text">Aiming for internship and entry-level roles in FinTech, compliance, and data/analyst functions — especially in Pakistan's digital banking and regulatory space.</p>
+    <p class="body-text">FinTech student at FAST-NUCES Lahore (Batch 28), currently interning at FlyRank AI across two tracks &mdash; Machine Learning and AI Fluency. My work sits at the intersection of data, models, and regulation: I like problems where "make it better" has to turn into a metric someone can actually check.</p>
+    <p class="body-text">Aiming for internship and entry-level roles in FinTech, compliance, and data/analyst functions &mdash; especially in Pakistan's digital banking and regulatory space.</p>
   </section>
 
   <section>
     <div class="field">Projects</div>
 
     <div class="row">
-      <div class="status">Active</div>
+      <div class="status wip">In progress</div>
       <div>
-        <h3>Lane 2 — Content Opportunity Scoring</h3>
+        <h3>Lane 2 &mdash; Content Opportunity Scoring</h3>
         <p>ML capstone at FlyRank AI. Defined a data contract for a ranking/scoring task, ran verification queries against FlyRank's Hugging Face warehouse, engineered features, and stress-tested the pipeline for label leakage.</p>
         <div class="tags"><span>Data Contracts</span><span>Feature Engineering</span><span>Precision@K</span></div>
       </div>
@@ -187,9 +270,9 @@
     </div>
 
     <div class="row">
-      <div class="status wip">Ongoing</div>
+      <div class="status">Ongoing</div>
       <div>
-        <h3>ML Internship — Public Repo</h3>
+        <h3>ML Internship &mdash; Public Repo</h3>
         <p>Weekly notebooks covering research framing, ML task design, and data contracts for the FlyRank capstone.</p>
         <div class="tags"><span><a href="https://github.com/ak470107/ML-internship">github.com/ak470107/ML-internship</a></span></div>
       </div>
@@ -200,8 +283,8 @@
   <section>
     <div class="field">Contact</div>
     <div class="contact-list">
-      <div><span class="k">Email</span><a href="mailto:ummemaatif2004@gmail.com">youremail@example.com</a></div>
-      <div><span class="k">LinkedIn</span><a href="www.linkedin.com/in/ummema-atif-2275471a1">linkedin.com/in/your-handle</a></div>
+      <div><span class="k">Email</span><a href="mailto:ummematif2004@gmail.com">ummematif2004@gmail.com</a></div>
+      <div><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/ummema-atif-2275471a1">linkedin.com/in/ummema-atif-2275471a1</a></div>
       <div><span class="k">GitHub</span><a href="https://github.com/ak470107">github.com/ak470107</a></div>
     </div>
   </section>
